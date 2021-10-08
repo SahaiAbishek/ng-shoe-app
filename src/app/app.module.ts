@@ -6,10 +6,18 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
+import { HeaderComponent } from './components/header/header.component';
+import { AddShoeComponent } from './components/add-shoe/add-shoe.component';
+import { ViewShoesComponent } from './components/view-shoes/view-shoes.component';
+import { ShoeDetailsComponent } from './components/shoe-details/shoe-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    AddShoeComponent,
+    ViewShoesComponent,
+    ShoeDetailsComponent
   ],
   imports: [
     BrowserModule,
