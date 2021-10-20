@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SocialUser } from 'angularx-social-login';
 import { Observable } from 'rxjs';
 import { Shoe } from 'src/app/classes/shoe';
 import { ShoeServiceService } from 'src/app/service/shoe-service.service';
@@ -10,12 +11,17 @@ import { ShoeServiceService } from 'src/app/service/shoe-service.service';
 })
 export class ViewShoesComponent implements OnInit {
 
-  shoes: Observable<Shoe>[];
+  @Input() user: SocialUser;
+
+  shoes: Shoe[];
   constructor(private shoeService: ShoeServiceService) { }
 
   ngOnInit(): void {
-    this.shoes = this.shoeService.getMyShoes();
-    console.log(this.shoes.length);
+    this.shoeService.getMyShoes(this.user.email).subscribe(
+      data => {
+        this.shoes = data;
+      }
+    );
   }
 
 }

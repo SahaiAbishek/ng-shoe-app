@@ -28,15 +28,11 @@ export class AppComponent implements OnInit{
     this.socialAuthService.authState.subscribe((user) => {
       this.socialUser = user;
       this.isLoggedin = (user != null);
-      console.log(this.socialUser);
+      //console.log(this.socialUser);
     });
   }
 
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
-  }
-
-  logOut(): void {
-    this.socialAuthService.signOut();
   }
 }

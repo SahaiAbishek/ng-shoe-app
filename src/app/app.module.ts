@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { HeaderComponent } from './components/header/header.component';
 import { AddShoeComponent } from './components/add-shoe/add-shoe.component';
 import { ViewShoesComponent } from './components/view-shoes/view-shoes.component';
 import { ShoeDetailsComponent } from './components/shoe-details/shoe-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { ShoeDetailsComponent } from './components/shoe-details/shoe-details.com
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     {

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SocialUser } from 'angularx-social-login';
+import { SocialAuthService, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-header',
@@ -8,14 +8,18 @@ import { SocialUser } from 'angularx-social-login';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() user: string;
+  @Input() user: SocialUser;
 
-  constructor() {
+  constructor(private socialAuthService: SocialAuthService) {
     
    }
 
   ngOnInit(): void {
-    console.log(this.user);
+    //console.log(this.user);
+  }
+
+  logOut(): void {
+    this.socialAuthService.signOut();
   }
 
 }

@@ -1,8 +1,8 @@
 export class Shoe {
     brand:string;
     model:string;
-    purchaseDate:string;
+    startDate:string;
     size:string;
     cusion:string;
-    drop:string;
+    shoeDrop:string;
 }

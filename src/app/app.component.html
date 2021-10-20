@@ -21,9 +21,7 @@
       <label>Email</label>
       <input type="text" class="form-control" [value]="socialUser.email" id="email" readonly>
     </div> -->
-    <app-view-shoes></app-view-shoes>
-    <app-add-shoe></app-add-shoe>
-
-    <button type="button" (click)="logOut()" class="btn btn-primary">Log Out</button>
+    <app-view-shoes [user]="socialUser"></app-view-shoes>
+    <app-add-shoe [user]="socialUser"></app-add-shoe>
   </div>
 </div>
